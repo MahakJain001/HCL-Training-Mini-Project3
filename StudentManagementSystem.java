@@ -17,10 +17,10 @@ public class StudentManagementSystem {
         String p = sc.next();
 
         if (!u.equals(user) || !p.equals(pass)) {
-            System.out.println("❌ Invalid Login Credentials");
+            System.out.println("Invalid Login Credentials");
             System.exit(0);
         }
-        System.out.println("✅ Login Successful\n");
+        System.out.println("Login Successful\n");
     }
 
     static void addStudent() throws Exception {
@@ -51,7 +51,7 @@ public class StudentManagementSystem {
             throw new InvalidPercentageException("Percentage must be positive");
 
         students.add(new Student(eno, name, branch, sem, per));
-        System.out.println("✅ Student Added Successfully");
+        System.out.println("Student Added Successfully");
     }
 
     static void displayStudents() {
@@ -73,7 +73,7 @@ public class StudentManagementSystem {
                 return;
             }
         }
-        System.out.println("❌ Student not found");
+        System.out.println("Student not found");
     }
 
     static void updateBranch() {
@@ -84,11 +84,11 @@ public class StudentManagementSystem {
             if (s.eno == eno) {
                 System.out.print("Enter New Branch: ");
                 s.branch = sc.next();
-                System.out.println("✅ Branch Updated");
+                System.out.println("Branch Updated");
                 return;
             }
         }
-        System.out.println("❌ Student not found");
+        System.out.println("Student not found");
     }
 
     static void deleteStudent() {
@@ -99,16 +99,16 @@ public class StudentManagementSystem {
         while (it.hasNext()) {
             if (it.next().eno == eno) {
                 it.remove();
-                System.out.println("✅ Student Deleted");
+                System.out.println("Student Deleted");
                 return;
             }
         }
-        System.out.println("❌ Student not found");
+        System.out.println("Student not found");
     }
 
     static void sortStudents() {
         students.sort(Comparator.comparingInt(s -> s.eno));
-        System.out.println("✅ Students Sorted by Eno");
+        System.out.println("Students Sorted by Eno");
     }
 
     public static void main(String[] args) {
@@ -140,8 +140,9 @@ public class StudentManagementSystem {
                     default -> System.out.println("Invalid choice");
                 }
             } catch (Exception e) {
-                System.out.println("⚠️ Error: " + e.getMessage());
+                System.out.println("Error: " + e.getMessage());
             }
         }
     }
 }
+
